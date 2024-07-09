@@ -1,0 +1,50 @@
+#create frames from video
+ffmpeg -i 3.mov testFrames/frame%06d.png
+
+#create video from frames
+ffmpeg -i outFrames/frame%06d.png -c:v libx264 -vf fps=23.98 -pix_fmt yuva444p10le newOut.mp4
+
+wget https://googledrive.com/host/1FSfcfbrtN3xl5Prno6HiSgYKc-0erTt_/video.mp4
+
+
+https://drive.google.com/file/d/1Kw35yupJBwqHATydUzOSF9qMCllvPKuF/view?usp=sharing
+
+wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1Kw35yupJBwqHATydUzOSF9qMCllvPKuF' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1Kw35yupJBwqHATydUzOSF9qMCllvPKuF" -O 3.mov && rm -rf /tmp/cookies.txt
+
+
+
+
+
+ffmpeg convert to frames
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '3.mov':
+  Metadata:
+    major_brand     : qt
+    minor_version   : 0
+    compatible_brands: qt
+    creation_time   : 2020-01-24 17:30:14
+    encoder         : Mac OS X v? (AVF 1536.36, CM 2276.68, x86_64)
+    encoder-eng     : Mac OS X v? (AVF 1536.36, CM 2276.68, x86_64)
+  Duration: 00:00:09.68, start: 0.000000, bitrate: 106422 kb/s
+    Stream #0:0(eng): Video: prores (ap4h / 0x68347061), yuva444p10le(bt470bg/smpte240m/bt709), 1156x520, 106416 kb/s, 23.98 fps, 23.98 tbr, 24k tbn, 24k tbc (default)
+    Metadata:
+      creation_time   : 2020-01-24 17:30:14
+      handler_name    : Core Media Data Handler
+      encoder         : Apple ProRes 4444
+      timecode        : 00:01:17:16
+    Stream #0:1(eng): Data: none (tmcd / 0x64636D74), 0 kb/s (default)
+    Metadata:
+      creation_time   : 2020-01-24 17:30:14
+      handler_name    : Core Media Data Handler
+      timecode        : 00:01:17:16
+Output #0, image2, to 'testFrames/frame%06d.png':
+  Metadata:
+    major_brand     : qt
+    minor_version   : 0
+    compatible_brands: qt
+    encoder         : Lavf56.40.101
+    Stream #0:0(eng): Video: png, rgba64be, 1156x520, q=2-31, 200 kb/s, 23.98 fps, 23.98 tbn, 23.98 tbc (default)
+    Metadata:
+      creation_time   : 2020-01-24 17:30:14
+      handler_name    : Core Media Data Handler
+      timecode        : 00:01:17:16
+      encoder         : Lavc56.60.100 png
